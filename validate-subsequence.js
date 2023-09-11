@@ -6,11 +6,9 @@
 
 // My solution
 // O(n) time | O(1) space
+/*
 function isValidSubsequence(array, sequence) {
   // Write your code here.
-  function compare(a, b) {
-    return a - b;
-  }
   let j = 0;
   let isSequence = false;
   for (i in array) {
@@ -22,6 +20,20 @@ function isValidSubsequence(array, sequence) {
     }
   }
   return isSequence;
+}
+// Do not edit the line below.
+exports.isValidSubsequence = isValidSubsequence;
+*/
+
+// Code refactor by me
+function isValidSubsequence(array, sequence) {
+  // Write your code here.
+  let j = 0;
+  let isSequence = false;
+  for (i in array) {
+    if (array[i] === sequence[j]) j++;
+  }
+  return j === sequence.length;
 }
 // Do not edit the line below.
 exports.isValidSubsequence = isValidSubsequence;
