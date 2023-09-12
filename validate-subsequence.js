@@ -25,15 +25,27 @@ function isValidSubsequence(array, sequence) {
 exports.isValidSubsequence = isValidSubsequence;
 */
 
+/*
 // Code refactor by me
 function isValidSubsequence(array, sequence) {
   // Write your code here.
   let j = 0;
-  let isSequence = false;
   for (i in array) {
     if (array[i] === sequence[j]) j++;
   }
   return j === sequence.length;
+}
+// Do not edit the line below.
+exports.isValidSubsequence = isValidSubsequence;
+*/
+
+// Best Solution Found by someone else
+// O(n) time | O(n) space
+function isValidSubsequence(array, sequence) {
+  // Write your code here.
+  let counter = 0;
+  array.forEach((num, index) => num === sequence[counter] && counter++);
+  return counter === sequence.length;
 }
 // Do not edit the line below.
 exports.isValidSubsequence = isValidSubsequence;
