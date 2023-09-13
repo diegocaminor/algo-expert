@@ -18,7 +18,9 @@ function twoNumberSum(array, targetSum) {
     return [];
   */
 
+  // ====================================================================================================
   // My solution
+  // ====================================================================================================
   // O(n) time | O(n) space
   // Different approach implemented by me having into consideration optimal space and time complexity O(n) time where n is the lentgh of the input array
   /*
@@ -35,7 +37,9 @@ function twoNumberSum(array, targetSum) {
     .map((value) => parseInt(value, 10));
     */
 
+  // ====================================================================================================
   // Even Best Solution Found
+  // ====================================================================================================
   // O(n) time | O(n) space
   let seen = new Set();
   let complement;

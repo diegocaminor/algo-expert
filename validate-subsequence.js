@@ -26,7 +26,9 @@ exports.isValidSubsequence = isValidSubsequence;
 */
 
 /*
+// ====================================================================================================
 // Code refactor by me
+// ====================================================================================================
 function isValidSubsequence(array, sequence) {
   // Write your code here.
   let j = 0;
@@ -39,7 +41,9 @@ function isValidSubsequence(array, sequence) {
 exports.isValidSubsequence = isValidSubsequence;
 */
 
+// ====================================================================================================
 // Best Solution Found by someone else
+// ====================================================================================================
 // O(n) time | O(n) space
 function isValidSubsequence(array, sequence) {
   // Write your code here.
