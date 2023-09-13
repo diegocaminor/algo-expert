@@ -32,11 +32,11 @@ function sortedSquaredArray(array) {
   array.forEach((num, i) => {
     if (Math.abs(smallValue) < Math.abs(largeValue)) {
       valueToBeSquared = largeValue;
-      counterLargerValue = counterLargerValue - 1;
+      counterLargerValue--;
       largeValue = array[counterLargerValue];
     } else {
       valueToBeSquared = smallValue;
-      counterSmallValue = counterSmallValue + 1;
+      counterSmallValue++;
       smallValue = array[counterSmallValue];
     }
     squaredArray.unshift(valueToBeSquared ** 2);
