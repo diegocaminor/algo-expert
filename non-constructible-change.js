@@ -22,12 +22,12 @@ function nonConstructibleChange(coins) {
   coins = coins.sort(function (a, b) {
     return a - b;
   });
-  let currentChange = 0;
+  let minimumChange = 0;
   for (let i = 0; i < coins.length; i++) {
-    if (coins[i] > currentChange + 1) return currentChange + 1;
-    currentChange += coins[i];
+    if (coins[i] > minimumChange + 1) return minimumChange + 1;
+    minimumChange += coins[i];
   }
-  return currentChange + 1;
+  return minimumChange + 1;
 }
 
 // Do not edit the line below.
