@@ -92,3 +92,64 @@ function tournamentWinner(competitions, results) {
 
 // Do not edit the line below.
 exports.tournamentWinner = tournamentWinner;
+
+// ====================================================================================================
+// Second Solution
+// ====================================================================================================
+HOME_TEAM_WON = 1;
+function tournamentWinner(competitions, results) {
+  // Write your code here.
+  let totalScore = {};
+  let homeTeam;
+  let awayTeam;
+  let winnerTeam = "";
+  let winnerScore = 0;
+  let winningTeam = "";
+  competitions.forEach((team, i) => {
+    homeTeam = team[0];
+    awayTeam = team[1];
+    winningTeam = results[i] === HOME_TEAM_WON ? homeTeam : awayTeam;
+
+    if (!totalScore[winningTeam]) totalScore[winningTeam] = 0;
+
+    totalScore[winningTeam] += 3;
+
+    if (totalScore[winningTeam] > winnerScore) {
+      winnerScore = totalScore[winningTeam];
+      winnerTeam = winningTeam;
+    }
+  });
+  return winnerTeam;
+}
+
+// Do not edit the line below.
+exports.tournamentWinner = tournamentWinner;
+
+// ====================================================================================================
+// Third Solution
+// ====================================================================================================
+// O(n) time | O(n) space
+const HOME_TEAM_WON = 1;
+
+function tournamentWinner(competitions, results) {
+  const scores = {};
+  let winner = "";
+  let maxScore = 0;
+
+  for (let i = 0; i < competitions.length; i++) {
+    const [homeTeam, awayTeam] = competitions[i];
+    const winningTeam = results[i] === HOME_TEAM_WON ? homeTeam : awayTeam;
+
+    scores[winningTeam] = (scores[winningTeam] || 0) + 3;
+
+    if (scores[winningTeam] > maxScore) {
+      maxScore = scores[winningTeam];
+      winner = winningTeam;
+    }
+  }
+
+  return winner;
+}
+
+// Do not edit the line below.
+exports.tournamentWinner = tournamentWinner;

@@ -6,7 +6,6 @@
 
 // My solution
 // O(n) time | O(1) space
-/*
 function isValidSubsequence(array, sequence) {
   // Write your code here.
   let j = 0;
@@ -23,7 +22,6 @@ function isValidSubsequence(array, sequence) {
 }
 // Do not edit the line below.
 exports.isValidSubsequence = isValidSubsequence;
-*/
 
 /*
 // ====================================================================================================
