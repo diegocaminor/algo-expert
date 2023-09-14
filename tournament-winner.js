@@ -128,7 +128,7 @@ exports.tournamentWinner = tournamentWinner;
 // ====================================================================================================
 // Third Solution
 // ====================================================================================================
-// O(n) time | O(n) space
+// O(n) time | O(k) space
 const HOME_TEAM_WON = 1;
 
 function tournamentWinner(competitions, results) {
