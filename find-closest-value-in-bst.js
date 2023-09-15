@@ -53,3 +53,40 @@ class BST {
 
 // Do not edit the line below.
 exports.findClosestValueInBst = findClosestValueInBst;
+
+// ====================================================================================================
+// Second Solution -> Refactored Recursive Solution
+// O(nlogn) time | O(nlogn) space
+// ====================================================================================================
+
+function findClosestValueHelper(tree, target, diff) {
+  if (!tree) return;
+
+  let currentDiff = Math.abs(tree.value - target);
+  if (currentDiff < diff.prevDifference || currentDiff === 0) {
+    diff.closestValue = tree.value;
+    diff.prevDifference = currentDiff;
+  }
+  if (target < tree.value) findClosestValueHelper(tree.left, target, diff);
+  else if (target > tree.value)
+    findClosestValueHelper(tree.right, target, diff);
+}
+
+function findClosestValueInBst(tree, target) {
+  // Write your code here.
+  let diff = { prevDifference: Infinity, closestValue: null };
+  findClosestValueHelper(tree, target, diff);
+  return diff.closestValue;
+}
+
+// This is the class of the input tree. Do not edit.
+class BST {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
+}
+
+// Do not edit the line below.
+exports.findClosestValueInBst = findClosestValueInBst;
