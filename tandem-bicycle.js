@@ -31,7 +31,7 @@
 
 // ====================================================================================================
 // First Solution
-// O(n) time | O(1) space - where n is the number of red and blue shirts
+// O(nlogn) time | O(1) space - where n is the number of red and blue shirts
 // ====================================================================================================
 
 function tandemBicycle(redShirtSpeeds, blueShirtSpeeds, fastest) {
@@ -66,7 +66,7 @@ exports.tandemBicycle = tandemBicycle;
 
 // ====================================================================================================
 // Second Solution
-// O(n) time | O(1) space - where n is the number of red and blue shirts
+// O(nlogn) time | O(1) space - where n is the number of red and blue shirts
 // ====================================================================================================
 
 function tandemBicycle(redShirtSpeeds, blueShirtSpeeds, fastest) {
@@ -85,6 +85,29 @@ function tandemBicycle(redShirtSpeeds, blueShirtSpeeds, fastest) {
       maxSpeed += Math.max(redShirtSpeeds[i], blueShirtSpeeds[j]);
       j--;
     }
+  }
+
+  return maxSpeed;
+}
+
+// Do not edit the line below.
+exports.tandemBicycle = tandemBicycle;
+
+// ====================================================================================================
+// Third Solution
+// O(nlogn) time | O(1) space - where n is the number of red and blue shirts
+// ====================================================================================================
+
+function tandemBicycle(redShirtSpeeds, blueShirtSpeeds, fastest) {
+  let maxSpeed = 0;
+  redShirtSpeeds.sort((a, b) => a - b); // Sort red shirt speeds in ascending order
+  blueShirtSpeeds.sort((a, b) => b - a); // Sort blue shirt speeds in descending order
+
+  for (let i = 0; i < redShirtSpeeds.length; i++) {
+    maxSpeed += Math.max(
+      redShirtSpeeds[i],
+      blueShirtSpeeds[fastest ? i : blueShirtSpeeds.length - i - 1]
+    );
   }
 
   return maxSpeed;
