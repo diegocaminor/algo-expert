@@ -1,5 +1,4 @@
 // Depth-first Search
-
 //   You're given a <span>Node</span> class that has a <span>name</span> and an
 //   array of optional <span>children</span> nodes. When put together, nodes form
 //   an acyclic tree-like structure.
