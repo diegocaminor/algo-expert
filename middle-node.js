@@ -48,3 +48,36 @@ function middleNode(linkedList) {
 
 // Do not edit the line below.
 exports.middleNode = middleNode;
+
+// ====================================================================================================
+// Second Solution
+// O(n) time | O(1) space - where n is the number of nodes in the Linked List
+// ====================================================================================================
+
+// This is an input class. Do not edit.
+class LinkedList {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
+}
+
+exports.LinkedList = LinkedList;
+
+function middleNode(linkedList) {
+  // Write your code here.
+  let slowerPointer = linkedList;
+  let fasterPointer = linkedList;
+  if (!slowerPointer.next) return slowerPointer;
+  while (fasterPointer) {
+    slowerPointer = slowerPointer.next;
+    fasterPointer = fasterPointer?.next?.next;
+    if (!fasterPointer?.next) {
+      break;
+    }
+  }
+  return slowerPointer;
+}
+
+// Do not edit the line below.
+exports.middleNode = middleNode;
