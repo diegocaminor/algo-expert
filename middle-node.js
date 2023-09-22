@@ -69,12 +69,9 @@ function middleNode(linkedList) {
   let slowerPointer = linkedList;
   let fasterPointer = linkedList;
   if (!slowerPointer.next) return slowerPointer;
-  while (fasterPointer) {
+  while (fasterPointer != null && fasterPointer.next != null) {
     slowerPointer = slowerPointer.next;
     fasterPointer = fasterPointer?.next?.next;
-    if (!fasterPointer?.next) {
-      break;
-    }
   }
   return slowerPointer;
 }
