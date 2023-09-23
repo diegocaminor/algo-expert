@@ -31,3 +31,24 @@ function getNthFib(n) {
 
 // Do not edit the line below.
 exports.getNthFib = getNthFib;
+
+// ====================================================================================================
+// Second Solution
+// O(n) time | O(1) space - where n is the input number
+// ====================================================================================================
+
+let cache = [];
+
+function getNthFib(n) {
+  // Write your code here.
+  if (n == 1) return 0;
+  if (n == 2) return 1;
+  if (cache[n]) {
+    return cache[n];
+  }
+  cache[n] = getNthFib(n - 1, cache) + getNthFib(n - 2, cache);
+  return cache[n];
+}
+
+// Do not edit the line below.
+exports.getNthFib = getNthFib;
