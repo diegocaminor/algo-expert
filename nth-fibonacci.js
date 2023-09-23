@@ -24,8 +24,8 @@
 
 function getNthFib(n) {
   // Write your code here.
-  if (n == 1) return 0;
-  if (n == 2) return 1;
+  if (n === 1) return 0;
+  if (n === 2) return 1;
   return getNthFib(n - 1) + getNthFib(n - 2);
 }
 
@@ -41,12 +41,10 @@ let cache = [];
 
 function getNthFib(n) {
   // Write your code here.
-  if (n == 1) return 0;
-  if (n == 2) return 1;
-  if (cache[n]) {
-    return cache[n];
-  }
-  cache[n] = getNthFib(n - 1, cache) + getNthFib(n - 2, cache);
+  if (n === 1) return 0;
+  if (n === 2) return 1;
+  if (cache[n]) return cache[n];
+  cache[n] = getNthFib(n - 1) + getNthFib(n - 2);
   return cache[n];
 }
 
