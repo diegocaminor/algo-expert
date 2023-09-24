@@ -28,7 +28,7 @@ exports.binarySearch = binarySearch;
 
 // ====================================================================================================
 // Second Solution
-// O(logn) time | O(1) space - where n is the number of elements in the array
+// O(logn) time | O(n) space - where n is the number of elements in the array
 // ====================================================================================================
 
 function binarySearch(array, target) {
@@ -39,5 +39,25 @@ function binarySearch(array, target) {
     return -1;
   }
 }
+// Do not edit the line below.
+exports.binarySearch = binarySearch;
+
+// ====================================================================================================
+// Second Solution
+// O(logn) time | O(1) space - where n is the number of elements in the array
+// ====================================================================================================
+
+function binarySearch(array, target, left = 0, right = array.length - 1) {
+  // Write your code here.
+  let mid;
+  while (left <= right) {
+    mid = Math.floor((left + right) / 2);
+    if (array[mid] === target) return mid;
+    if (array[mid] < target) left = mid + 1;
+    if (array[mid] > target) right = mid - 1;
+  }
+  return -1;
+}
+
 // Do not edit the line below.
 exports.binarySearch = binarySearch;
