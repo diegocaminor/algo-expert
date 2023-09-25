@@ -34,3 +34,26 @@ function bubbleSort(array) {
 
 // Do not edit the line below.
 exports.bubbleSort = bubbleSort;
+
+// ====================================================================================================
+// Second Solution Refactored
+// Best: O(n) time | O(1) space - where n is the length of the input array
+// Average: O(n^2) time | O(1) space - where n is the length of the input array
+// Worst: O(n^2) time | O(1) space - where n is the length of the input array
+// ====================================================================================================
+
+function bubbleSort(array) {
+  // Write your code here.
+  let swaps = 0;
+  for (let i = 0; i < array.length - 1; i++) {
+    if (array[i] > array[i + 1]) {
+      [array[i], array[i + 1]] = [array[i + 1], array[i]];
+      swaps++;
+    }
+  }
+
+  return swaps === 0 ? array : bubbleSort(array);
+}
+
+// Do not edit the line below.
+exports.bubbleSort = bubbleSort;
