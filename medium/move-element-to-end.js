@@ -28,3 +28,32 @@ function moveElementToEnd(array, toMove) {
 
 // Do not edit the line below.
 exports.moveElementToEnd = moveElementToEnd;
+
+// ====================================================================================================
+// Second Solution
+// O(n) time | O(1) space - where n is the length of the input array
+// ====================================================================================================
+
+function moveElementToEnd(array, toMove) {
+  // Write your code here.
+  let left = 0,
+    right = array.length - 1;
+
+  for (let i = 0; i < array.length; i++) {
+    if (left === right) return array;
+    if (array[left] === array[right]) {
+      right -= 1;
+    } else if (array[left] != array[right] && array[left] === toMove) {
+      temp = array[left];
+      array[left] = array[right];
+      array[right] = temp;
+      left += 1;
+    } else {
+      left += 1;
+    }
+  }
+  return array;
+}
+
+// Do not edit the line below.
+exports.moveElementToEnd = moveElementToEnd;
